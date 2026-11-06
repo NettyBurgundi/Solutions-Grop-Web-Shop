@@ -1,0 +1,84 @@
+mein-shop/
+  index.html
+  produkte.html
+  kontakt.html
+  css/style.css
+  js/script.js
+  images/logo.png
+  images/hero.jpg
+  images/buero.jpg
+
+:root{ --main:#88979f; --dark:#31342f; --green:#666e5d; --light:#f2f3f1; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--dark);line-height:1.6}
+header{background:white;padding:10px 0;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 20px;flex-wrap:wrap}
+.header-logo{height:75px;width:auto}
+nav a{color:var(--dark);text-decoration:none;margin-left:18px;font-weight:bold}
+nav a:hover{color:var(--main)}
+.hero{background:var(--dark);color:white;padding:50px 20px;text-align:center}
+.hero h1{font-size:38px;margin-bottom:10px}
+.hero p{max-width:700px;margin:10px auto}
+.btn{display:inline-block;background:var(--green);color:white;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:bold;margin-top:12px;border:none;cursor:pointer}
+.btn:hover{opacity:.9}
+.container{max-width:1100px;margin:auto;padding:30px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-body{padding:18px}
+.price{font-weight:900;font-size:19px;color:var(--green);margin:10px 0}
+.tag{display:inline-block;background:var(--main);color:white;padding:4px 10px;border-radius:20px;font-size:12px}
+.hero-img{width:100%;max-height:420px;object-fit:cover;border-radius:12px;margin-bottom:20px}
+.buero-img{width:100%;max-height:380px;object-fit:cover;border-radius:12px;margin-top:20px}
+footer{background:var(--dark);color:white;text-align:center;padding:20px;margin-top:30px}
+form{max-width:600px;background:white;padding:22px;border-radius:12px}
+label{display:block;margin-top:14px;font-weight:bold}
+input,textarea,select{width:100%;padding:11px;border:1px solid #ccc;border-radius:8px;margin-top:6px}
+.cart-badge{background:var(--green);color:white;padding:2px 8px;border-radius:20px}
+#danke{display:none;background:#e6f0e6;border:2px solid var(--green);padding:16px;border-radius:10px;margin-top:18px}
+
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solutions Group - Innovative solutions for a better tomorrow</title>
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header><div class="nav">
+<img src="images/logo.png" alt="Solutions Group Logo" class="header-logo">
+<nav><a href="index.html">Start</a><a href="produkte.html">Produkte</a><a href="kontakt.html">Kontakt</a><a href="#">Warenkorb <span class="cart-badge" id="cartCount">0</span></a></nav></div></header>
+<section class="hero"><h1>Büromöbel. Events. Webshops.</h1><p>Alles aus einer Hand: Wir richten dein Büro ein, organisieren dein Event und bauen deinen Webshop - professionell, nachhaltig und zum fairen Preis.</p><a class="btn" href="produkte.html">Jetzt Produkte entdecken</a></section>
+<div class="container">
+<img src="images/hero.jpg" alt="Solutions Group Schreibtisch" class="hero-img">
+<h2>Unsere 3 Bereiche</h2><br><div class="grid">
+<div class="card"><div class="card-body"><span class="tag">BÜROMÖBEL</span><h3>Modern arbeiten</h3><p>Ergonomische Schreibtische, Stühle und Stauraum für Büro & Home-Office.</p></div></div>
+<div class="card"><div class="card-body"><span class="tag">EVENTMANAGEMENT</span><h3>Events, die bleiben</h3><p>Planung, Aufbau, Technik und Betreuung für Firmen-Events bis 500 Personen.</p></div></div>
+<div class="card"><div class="card-body"><span class="tag">WEBSHOPS</span><h3>Online verkaufen</h3><p>Wir erstellen und pflegen deinen Webshop - Design, Produkte, SEO und Updates.</p></div></div>
+</div><br><h2>Warum Solutions Group?</h2><p>✅ Ein Ansprechpartner für Büro, Event & Online-Shop<br>✅ Faire Preise, transparente Angebote<br>✅ Schnelle Lieferung in Berlin & deutschlandweit</p>
+<h2 style="margin-top:30px">Unser Büro in Berlin</h2>
+<img src="images/buero.jpg" alt="Unser Büro" class="buero-img">
+<p>Innovative solutions for a better tomorrow - das leben wir jeden Tag in unserem Büro in Berlin.</p>
+</div>
+<footer>© 2026 Solutions Group | Innovative solutions for a better tomorrow | Berlin</footer>
+<script src="js/script.js"></script></body></html>
+
+<header><div class="nav">
+<img src="images/logo.png" alt="Solutions Group Logo" class="header-logo">
+<nav><a href="index.html">Start</a><a href="produkte.html">Produkte</a><a href="kontakt.html">Kontakt</a><a href="#">Warenkorb <span class="cart-badge" id="cartCount">0</span></a></nav></div></header>
+
+let count = 0;
+function addToCart(name){
+  count++;
+  document.getElementById('cartCount').textContent = count;
+  alert(name + ' wurde zum Warenkorb hinzugefügt!\nWarenkorb: ' + count + ' Artikel');
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  const form = document.getElementById('kontaktForm');
+  if(form){
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      document.getElementById('danke').style.display='block';
+      document.getElementById('danke').innerHTML = 'Danke, ' + name + '! Deine Nachricht wurde gesendet. Wir melden uns innerhalb von 24 Stunden.';
+      form.reset();
+    });
+  }
+});
