@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Entdecke ausgewählte Büromöbel der Solutions Group.">
+    <title>Produkte – Solutions Group</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Solutions Group – Startseite">
+          <span class="brand-mark" aria-hidden="true">SG</span>
+          <span>Solutions <strong>Group</strong></span>
+        </a>
+        <nav aria-label="Hauptnavigation">
+          <a href="index.html">Start</a>
+          <a aria-current="page" href="produkte.html">Produkte</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a class="cart-link" href="#warenkorb">Warenkorb <span class="cart-badge" data-cart-count>0</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Ausgewählt für deinen Arbeitsplatz</p>
+        <h1>Produkte</h1>
+        <p>Entdecke ausgewählte Möbel für ein komfortables und produktives Büro.</p>
+      </section>
+
+      <section class="section container">
+        <div class="grid product-grid">
+          <article class="card product-card">
+            <div class="product-art art-chair-product" aria-hidden="true"><span></span></div>
+            <div class="card-body">
+              <span class="tag">ERGONOMIE</span>
+              <h2>Ergo Drehstuhl</h2>
+              <p>Verstellbarer Bürostuhl für komfortables Arbeiten im Alltag.</p>
+              <p class="price">249,00 €</p>
+              <button class="button" type="button" data-add-to-cart="stuhl">In den Warenkorb</button>
+            </div>
+          </article>
+          <article class="card product-card">
+            <div class="product-art art-desk-product" aria-hidden="true"><span></span></div>
+            <div class="card-body">
+              <span class="tag">FLEXIBEL</span>
+              <h2>Schreibtisch Klar</h2>
+              <p>Großzügige Arbeitsfläche mit schlichtem, zeitlosem Design.</p>
+              <p class="price">399,00 €</p>
+              <button class="button" type="button" data-add-to-cart="schreibtisch">In den Warenkorb</button>
+            </div>
+          </article>
+          <article class="card product-card">
+            <div class="product-art art-lamp-product" aria-hidden="true"><span></span></div>
+            <div class="card-body">
+              <span class="tag">LICHT</span>
+              <h2>Arbeitsleuchte Fokus</h2>
+              <p>Schlanke Tischleuchte für angenehmes Licht am Arbeitsplatz.</p>
+              <p class="price">79,00 €</p>
+              <button class="button" type="button" data-add-to-cart="leuchte">In den Warenkorb</button>
+            </div>
+          </article>
+        </div>
+        <p class="notice">Die Produkte und Preise dienen als Beispiel und können angepasst werden. Eine Bestell- oder Bezahlfunktion ist noch nicht angebunden.</p>
+      </section>
+
+      <section class="section container cart-section" id="warenkorb">
+        <div class="section-heading">
+          <p class="eyebrow">Deine Auswahl</p>
+          <h2>Warenkorb</h2>
+        </div>
+        <div class="cart-items" data-cart-items aria-live="polite"></div>
+        <p class="cart-total" data-cart-total></p>
+        <p class="notice">Der Warenkorb wird in diesem Browser gespeichert. Er löst noch keine Bestellung aus.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-year>2026</span> Solutions Group · Innovative solutions for a better tomorrow · Berlin</p>
+    </footer>
+  </body>
+</html>

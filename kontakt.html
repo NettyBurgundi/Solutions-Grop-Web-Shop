@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nimm Kontakt mit der Solutions Group auf.">
+    <title>Kontakt – Solutions Group</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Solutions Group – Startseite">
+          <span class="brand-mark" aria-hidden="true">SG</span>
+          <span>Solutions <strong>Group</strong></span>
+        </a>
+        <nav aria-label="Hauptnavigation">
+          <a href="index.html">Start</a>
+          <a href="produkte.html">Produkte</a>
+          <a aria-current="page" href="kontakt.html">Kontakt</a>
+          <a class="cart-link" href="produkte.html#warenkorb">Warenkorb <span class="cart-badge" data-cart-count>0</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Wir freuen uns auf deine Nachricht</p>
+        <h1>Kontakt</h1>
+        <p>Erzähl uns, wobei wir dich unterstützen können.</p>
+      </section>
+
+      <section class="section container contact-layout">
+        <div>
+          <h2>Lass uns sprechen.</h2>
+          <p>Ob Büroausstattung, Event oder Webshop – wir helfen dir gerne dabei, die passende Lösung zu finden.</p>
+          <div class="contact-note">
+            <strong>Hinweis</strong>
+            <p>Das Kontaktformular ist noch nicht mit einem E-Mail-Dienst verbunden. Beim Absenden wird keine Nachricht verschickt.</p>
+          </div>
+        </div>
+        <form class="contact-form" id="kontaktForm">
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required>
+
+          <label for="email">E-Mail-Adresse</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label for="topic">Worum geht es?</label>
+          <select id="topic" name="topic" required>
+            <option value="">Bitte auswählen</option>
+            <option>Büromöbel</option>
+            <option>Eventmanagement</option>
+            <option>Webshop</option>
+            <option>Sonstiges</option>
+          </select>
+
+          <label for="message">Nachricht</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button class="button" type="submit">Formular prüfen</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-year>2026</span> Solutions Group · Innovative solutions for a better tomorrow · Berlin</p>
+    </footer>
+  </body>
+</html>
