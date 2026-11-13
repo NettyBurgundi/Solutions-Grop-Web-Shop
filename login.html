@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Melde dich bei Solutions Group an.">
+    <title>Anmelden – Solutions Group</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="Solutions Group – Startseite">
+          <span class="brand-mark" aria-hidden="true"><img src="images/logo.png" alt="" width="44" height="44"></span>
+          <span>Solutions <strong>Group</strong></span>
+        </a>
+        <nav aria-label="Hauptnavigation">
+          <a href="index.html">Start</a>
+          <a href="produkte.html">Produkte</a>
+          <a href="kontakt.html">Kontakt</a>
+          <a class="nav-auth-link" data-auth-action href="login.html" aria-current="page">Anmelden</a>
+          <a class="cart-link" href="produkte.html#warenkorb">Warenkorb <span class="cart-badge" data-cart-count>0</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container login-section">
+        <form class="contact-form login-card" id="loginForm">
+          <p class="eyebrow">Willkommen zurück</p>
+          <h1>Anmelden</h1>
+          <p class="login-intro">Melde dich mit deinem Übungsfirma-Konto an.</p>
+
+          <label for="loginEmail">E-Mail</label>
+          <input id="loginEmail" name="email" type="email" autocomplete="username" required>
+
+          <label for="loginPassword">Passwort</label>
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password" required>
+
+          <button class="button" type="submit">Anmelden</button>
+          <p class="form-status" id="loginStatus" role="alert" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span data-year>2026</span> Solutions Group · Innovative solutions for a better tomorrow · Berlin · <a href="impressum.html">Impressum</a> · <a href="datenschutzerklarung.html">Datenschutzerklärung</a></p>
+    </footer>
+  </body>
+</html>
