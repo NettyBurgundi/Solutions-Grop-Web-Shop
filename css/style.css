@@ -716,6 +716,19 @@ select:focus-visible {
   background: #f7e9e7;
 }
 
+/* Startseite: Die drei Kategorie-Buttons kleiner und zentriert darstellen. */
+.category-button {
+  display: block;
+  width: 70%;
+  margin: 0 auto 16px;
+}
+
+.category-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 760px) {
   .nav {
     flex-direction: column;
