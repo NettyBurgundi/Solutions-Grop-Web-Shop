@@ -5,6 +5,9 @@ const products = {
 };
 
 const storageKey = "solutions-group-cart";
+const authStorageKey = "solutions-group-user";
+const demoEmail = "admin@ubungsfirma.de";
+const demoPassword = "123456";
 
 function readCart() {
   const savedCart = localStorage.getItem(storageKey);
@@ -94,5 +97,37 @@ if (contactForm) {
 document.querySelectorAll("[data-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
+
+const authAction = document.querySelector("[data-auth-action]");
+const loggedInUser = localStorage.getItem(authStorageKey);
+if (authAction && loggedInUser) {
+  const logoutButton = document.createElement("button");
+  logoutButton.className = "nav-auth-link";
+  logoutButton.type = "button";
+  logoutButton.textContent = "Abmelden";
+  logoutButton.addEventListener("click", () => {
+    localStorage.removeItem(authStorageKey);
+    window.location.href = "login.html";
+  });
+  authAction.replaceWith(logoutButton);
+}
+
+const loginForm = document.querySelector("#loginForm");
+if (loginForm) {
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const email = document.querySelector("#loginEmail").value.trim();
+    const password = document.querySelector("#loginPassword").value;
+    const status = document.querySelector("#loginStatus");
+
+    if (email === demoEmail && password === demoPassword) {
+      localStorage.setItem(authStorageKey, email);
+      window.location.href = "index.html";
+      return;
+    }
+
+    status.textContent = "E-Mail-Adresse oder Passwort ist falsch. Bitte versuche es erneut.";
+  });
+}
 
 renderCart();
