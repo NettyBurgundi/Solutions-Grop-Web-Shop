@@ -716,17 +716,38 @@ select:focus-visible {
   background: #f7e9e7;
 }
 
-/* Startseite: Die drei Kategorie-Buttons kleiner und zentriert darstellen. */
+/* Startseite: Die Karten werden vollständig durch großflächige Kategorie-Buttons ersetzt. */
+.grid:has(> .card > .category-button) > .card {
+  display: contents;
+}
+
+.grid:has(> .card > .category-button) > .card > :not(.category-button) {
+  display: none;
+}
+
 .category-button {
   display: block;
-  width: 70%;
-  margin: 0 auto 16px;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid #e8e9e5;
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.category-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgb(34 42 39 / 14%);
 }
 
 .category-button img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
 @media (max-width: 760px) {
@@ -755,6 +776,10 @@ select:focus-visible {
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .category-button {
+    height: 300px;
   }
 
   .why-grid,
