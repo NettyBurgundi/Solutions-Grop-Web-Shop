@@ -756,3 +756,29 @@ select:focus-visible {
     padding-bottom: 54px;
   }
 }
+
+.service-card {
+  display: block;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.service-card:hover,
+.service-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgb(34 42 39 / 18%);
+}
+
+@media (max-width: 900px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
